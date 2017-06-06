@@ -1,29 +1,22 @@
 language: node_js
-
 node_js:
 - '7'
-
 notifications:
   email: false
-
 before_install:
-- curl -o- -L https://yarnpkg.com/install.sh | bash # upgrade to latest Yarn version
+- curl -o- -L https://yarnpkg.com/install.sh | bash
 - sleep 1
-
 before_script:
 - npm rebuild phantomjs-prebuilt node-sass
 - sleep 1
-
 script:
 - npm run lint
 - npm run test:ci
 - npm run coveralls
-
 before_deploy:
 - npm install -g firebase-tools
 - echo 'About to deploy live...'
 - npm run build
-
 deploy:
   provider: firebase
   skip_cleanup: true
@@ -31,5 +24,5 @@ deploy:
     branch: master
     tags: true
   token:
-    secure: US1eQ1vzKkOnEMMxDXVK8gqixMyw0dtNHMa8mOXTwRbxgIYUrZciW83LV3LRbowWCKWQKhPUxCKZ+XgLHItE2DNatvVIHOYU5wi/hkdGE8PdtRV0srFyH1+wGLUhInv+OCMhXk65FrVhoxf1WIqIykAU526w1OZfDuTEvpRrV+RY9IIOSy07m1rGZq+LKwKFNuNj8xYAgp8NDUHZ/aAG7VP8ZrnKxh/Y64ryQFhZAs82Fp7HJhK3oEZFIyBDVDiCxRBL8lTkDiM2Ve6mAmJfRBEkzbMv7h8tCjcquq2QtpTaqyhXxVnPzGphQsf6KATb10OVJfbUA6G/eP2ATyRn9V3/lEr6JFtk7EK8U+PgTNC1b5XJR75dxn2mYnvNh2x8KVPc0ND/9AiibXLCYGUoRtciSl9IwQfUNQXkomH1FEWO3z9W0kVmwMvsdT9et0PGGLeo7VbJ4aqNADlfM8YamVQQ25DThPphsCIS8Qg2S/RJ4OhFH3s90ZFBMLh/0pLcgfLpzkr5olxfd5g7E1qmDqvKpiMpFH7wgSA2IyNiX93LW5IKSxkUXHAr6a/StpbaS7CHUp3/VrRBidFpEiOEzzG3PV1l+HQHKq5Jwgzk52o6NRs6jE5KRr/JasrJf54FESDwMfUK/BctfPeqI3hFiQ6Wrl5W2XjlXpNSlKlEu28=
+    secure: XR2+8tyBAB6zSgPlls6jBc84Ddxs1DnKypgc0c1G+oyWmA5N0ww4zJ7rkrAWjyHe9U354d3qsr4p7R/V/ua8xEMlbFGQA2sva5qe+OXaP2G1iPUYQuqcgMGITywNwllE1DSq2r1qo8IsI0rG2LidyWRVHbLjPJPbjVG6IZCB1cull6OIqqVblAox1yADdsk6CK2nO8d7PYUdF7L6Dh9dDk/rKzV7HKNi9h5L1CzCnKNebn9OTUtVgA/+HuVonK5uCth/Tcbm7ZJuA7De2q1fXNjz3g7H6pWFsMcIr/5++V7exZR+hGq+wNJ3/FbTR16yfii2h0sHqzN/hmR7D8syPfadVYqczQYC/zeMKcpSF9lealZmvPlBsX07jNBnI94EK/RB3zmHxzR/hgImxL5j3gV7B4s3B8qnSaYpM7vHjTJ1RUkB9zPtBG/s8V2SI77aEbi/JnkWAUKk7ncNPTS2hgWFOU4OwHjhNoFmImWosnxCM0OE5HpGXcsmICwo3Jd2G+G9y02i8AxDybdlrR406ywPiNoSbhrnAIqWeo3v8o2tkFP0jPxHoLK8vTVFD3SeE2XxE8afOOyzGrKdM7jBnceab6lK1RHDnZ6lsR24bZ8XlrMnQw/CK0fcMofALmdnzg7FsE1OZe61STDQdo+G8jeShBpZnVIhbNJ1XESfcKc=
   project: rock-paper-scissors-pwa
