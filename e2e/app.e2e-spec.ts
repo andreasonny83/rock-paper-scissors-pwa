@@ -1,16 +1,16 @@
-import { RockPaperScissorPwaPage } from './app.po';
+import { RockPaperScissorsPwaPage } from './app.po';
 
-describe('rock-paper-scissor-pwa App', () => {
-  let page: RockPaperScissorPwaPage;
+describe('Rock Paper Scissors App', () => {
+  let page: RockPaperScissorsPwaPage;
 
   beforeEach(() => {
-    page = new RockPaperScissorPwaPage();
+    page = new RockPaperScissorsPwaPage();
   });
 
   it('should display welcome message', done => {
     page.navigateTo();
     page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+      .then(msg => expect(msg).toEqual('Welcome to Rock Paper Scissors!!'))
       .then(done, done.fail);
   });
 });

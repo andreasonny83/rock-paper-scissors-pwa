@@ -1,0 +1,12 @@
+
+<form [formGroup]="gameForm" novalidate>
+  <md-radio-group class="example-radio-group" formControlName="chose">
+    <md-radio-button class="example-radio-button" *ngFor="let chose of playerChoses" [value]="chose">
+      {{ chose }}
+    </md-radio-button>
+  </md-radio-group>
+
+  <button md-raised-button>Play!</button>
+
+  <div>Your favorite season is: {{ gameForm.value.chose }}</div>
+</form>

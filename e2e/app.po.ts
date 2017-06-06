@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class RockPaperScissorPwaPage {
+export class RockPaperScissorsPwaPage {
   navigateTo() {
     return browser.get('/');
   }
