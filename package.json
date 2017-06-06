@@ -1,7 +1,7 @@
 {
   "name": "rock-paper-scissors-pwa",
   "description": "Progressive WebApp of the old fashion game",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "homepage": "https://rock-paper-scissors-pwa.firebaseapp.com/",
   "author": "andreasonny <andreasonny83@gmail.com>",
