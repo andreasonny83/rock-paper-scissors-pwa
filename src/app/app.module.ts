@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {
   MdButtonModule,
   MdRadioModule,
+  MdSnackBarModule,
+  MdProgressSpinnerModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -26,6 +28,8 @@ import { AIService } from './AI-service/ai.service';
     // AngularMaterial
     MdButtonModule,
     MdRadioModule,
+    MdSnackBarModule,
+    MdProgressSpinnerModule,
     // Routing logic
     AppRoutingModule,
   ],

@@ -12,7 +12,6 @@ before_script:
 script:
 - npm run lint
 - npm run test:ci
-# - npm run coveralls # Code coverage report
 before_deploy:
 - npm install -g firebase-tools
 - echo 'About to deploy live...'
@@ -24,5 +23,5 @@ deploy:
     branch: master
     tags: true
   token:
-    secure: Id3Dqxwuh0NlPSdxb/FN+r6DF9rFnyWM+KiSc9GpRjUJbvUl9cHalQe+qbA4IkY80f7v5q8bhazu5R27Q6eQ7LkAo4+Ckm0/1IOz99NkTQhRZ0oRDvGdsuiwaWKy8a9/h7rjdoRuY83fnisPujcfoQbPZ9E5P4yRqohjbdw1TGmk+yYcUFXGebh0JAvXi5qh9J5+uOaAluwbj8tX1hX9+fcj2g5NXcZL6A+82VMijSCKWCkhi0icvum+/uaAT2Ei8as7ehFrHmmZtW0DPLX4az02y2Z6mYIWjOMLYBMUM0wOa+10jC9ZgcvhXfNbQnjBy0gSmBKxJjmfTz6Hym58dTzuqOzOKJjIFYpQo65g4wsUecfivK6HVHQd3xdAxvWfSD3cA0mofhn+icGV30MH2DZB3RH8ZHDLtgcR3sqh+1DOZamd3uJH4fCXM9S5L7eeHcQQoRQaD26ACV2cgdsxwAVge6JQGEV9wN6ki8SLq3HOGcYwdNHwuTVaby3wJDMcLhxtfL5DLMWzFlFqahOaBGznNCdbRH0fVzD8u/sJYERj8pGXe8Ibeey6bU/25eFUcI634oshRwoRBGOar0K6MD64/yfxijXuRaDCs3/VH76qyJxUfTiYVB1777KCTiWFiYJnXLDKQf6EZ9cZylhN5PHepmb6ZuakvgtYiMZvF9g=
+    secure: OvBZlfqI9I5/tfQCwfa/toGmVhvwTefpbwTG5wsKawrM0Zgtd4q8bY2rY/SXYrl96zWRM3Wx+1qlJZPMKPDM6LA/22p3hQb+tZhN3JwhShtgPWXA0Q6TuOcBKNiS/RkUeN4Z7Z2aAhDiVNNLWDyU5Xsu/gUYWjPhcU5e3pCjJTeM1bUVzn6RB39M07aOLJmhTYt6TkzHMD+py7BZsXOpAtLoqsssz2AT5TiejeK8FJ038lNkTF3bPhv9fGXxp1YURE+AWIvRIGFRYv9F0olcewEr/iVbUV7Kfvt8UYAuCmK6N0EeSApcF1W928WHlED4aSy8GzHEBup6bfFTlTfG05KlP7N4EoUZ3oi/mE8Hzge3DDq+XukkpbNkFwsWENiGhGZswJB2M3fo84ZzLDIt719VBYvEurQ683UboXo+3+DkJbxAe4iHbMpg9A/i6piH9B7k7anLM8q0LRd5AmYyDOqqJlTpjs20lujNAQ8facK1yfNI4yGuzQSgGY+YCOaBFSH5QlJARVuUaMelkXpA4kmKYIQ9vln4NoJaEUJN7dFU+ggmzH97XqG1/Wy3d9WqxAt3JtJpkKb1+T9jgLCrejCI92bmmaPIIsdL++hWRJVld/UxUc7/uXHY/LYV+m4sf9kQhMDGVRApd3gPJr39NLXgH8eGw5mB2w6jcnewz0M=
   project: rock-paper-scissors-pwa

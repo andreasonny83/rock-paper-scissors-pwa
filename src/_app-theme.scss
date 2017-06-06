@@ -4,16 +4,16 @@
 
 $light-gray: mat-color($mat-grey, 200);
 
-$online-board-primary: mat-palette($mat-cyan, 500, 100, 900);
-$online-board-accent:  mat-palette($mat-amber, A200, A100, A400);
+$rock-paper-scissors-primary: mat-palette($mat-teal, 500, 100, 900);
+$rock-paper-scissors-accent:  mat-palette($mat-cyan, 800, 500, 900);
 
 // The warn palette is optional (defaults to red).
-$online-board-warn: mat-palette($mat-deep-orange, 500, 100, 900);
+$rock-paper-scissors-warn: mat-palette($mat-deep-orange, 500, 100, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$online-board-theme: mat-light-theme($online-board-primary, $online-board-accent, $online-board-warn);
+$rock-paper-scissors-theme: mat-light-theme($rock-paper-scissors-primary, $rock-paper-scissors-accent, $rock-paper-scissors-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($online-board-theme);
+@include angular-material-theme($rock-paper-scissors-theme);

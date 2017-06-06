@@ -1,12 +1,23 @@
-
 <form [formGroup]="gameForm" novalidate>
-  <md-radio-group class="example-radio-group" formControlName="chose">
-    <md-radio-button class="example-radio-button" *ngFor="let chose of playerChoses" [value]="chose">
+  <md-radio-group class="example-radio-group"
+                  formControlName="chose"
+                  color="accent">
+    <md-radio-button *ngFor="let chose of playerChoses"
+                     color="accent"
+                     class="example-radio-button"
+                     [value]="chose">
       {{ chose }}
     </md-radio-button>
   </md-radio-group>
 
-  <button md-raised-button>Play!</button>
-
-  <div>Your favorite season is: {{ gameForm.value.chose }}</div>
+  <button md-raised-button
+          color="accent"
+          [disabled]="!gameForm.valid || thinking"
+          (click)="play()">
+    Play!
+    <md-spinner color="primary"
+                strokeWidth="8"
+                *ngIf="thinking"
+                class="loading-spinner"></md-spinner>
+  </button>
 </form>
