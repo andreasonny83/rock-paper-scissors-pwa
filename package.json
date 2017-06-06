@@ -1,7 +1,17 @@
 {
   "name": "rock-paper-scissors-pwa",
+  "description": "Progressive WebApp of the old fashion game",
   "version": "0.0.1",
   "license": "MIT",
+  "homepage": "https://rock-paper-scissors-pwa.firebaseapp.com/",
+  "author": "andreasonny <andreasonny83@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andreasonny83/rock-paper-scissors-pwa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andreasonny83/rock-paper-scissors-pwa/issues"
+  },
   "scripts": {
     "start": "webpack-dev-server --port=4200",
     "build": "webpack",
@@ -25,7 +35,7 @@
     "@angular/platform-browser-dynamic": "4.1.3",
     "@angular/router": "4.1.3",
     "core-js": "2.4.1",
-    "intl": "^1.2.5",
+    "intl": "1.2.5",
     "rxjs": "5.4.0",
     "zone.js": "0.8.11"
   },
@@ -37,10 +47,10 @@
     "@types/node": "6.0.60",
     "autoprefixer": "6.5.3",
     "codelyzer": "3.0.1",
-    "commitizen": "^2.9.6",
+    "commitizen": "2.9.6",
     "css-loader": "0.28.1",
     "cssnano": "3.10.0",
-    "cz-conventional-changelog": "^2.0.0",
+    "cz-conventional-changelog": "2.0.0",
     "exports-loader": "0.6.3",
     "file-loader": "0.10.0",
     "istanbul-instrumenter-loader": "2.0.0",
