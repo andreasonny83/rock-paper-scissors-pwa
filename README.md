@@ -7,6 +7,8 @@
 
 WebApp running live at [rock-paper-scissors-pwa.firebaseapp.com](https://rock-paper-scissors-pwa.firebaseapp.com/)
 
+**NOTE** This is a ProgressiveWebApp, so why not trying to run the live website on your mobile device? :sunglasses:
+
 ## Table of Contents
 
 *   [Prerequisites](#prerequisites)
