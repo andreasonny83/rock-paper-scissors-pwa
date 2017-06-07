@@ -1,0 +1,20 @@
+#loading-spinner {
+  width: 26px; // need this to overwrite the angular-material component style
+  height: 26px;
+
+  margin-left: 4px;
+  display: inline-block;
+}
+
+.playing-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.playing-card.mat-card-content {
+  text-align: center;
+}
+
+.radio-button {
+  margin-left: 20px;
+}

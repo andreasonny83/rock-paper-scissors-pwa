@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from '@angular/material';
+import { MdDialog, MdSnackBar } from '@angular/material';
+import { DialogComponent } from './dialog.component';
 import { AIService } from '../AI-service/ai.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public snackBar: MdSnackBar,
+    public dialog: MdDialog,
     private fb: FormBuilder,
     private ai: AIService,
   ) {
@@ -31,6 +33,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() { }
 
   public play() {
+    const playerMove = this.gameForm.controls['chose'].value;
+
     // Display an useful message if the user tries to submit the form without chosing a move first
     if (!this.gameForm.valid) {
       return this.snackBar.open('You must chose your move first', null, {
@@ -41,14 +45,29 @@ export class HomeComponent implements OnInit {
     this.gameForm.controls['chose'].disable();
     this.thinking = true;
 
-    this.ai.play(this.gameForm.controls['chose'].value)
+    this.ai
+      .play(playerMove)
       .subscribe(res => {
         this.thinking = false;
         this.gameForm.controls['chose'].enable();
-        console.log(res);
+        this.displayResult(res);
       });
 
     return false;
+  }
+
+  private displayResult(response: any) {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: response,
+    });
+
+    dialogRef.afterClosed().subscribe((res: boolean) => {
+      return !!res && this.snackBar.open(
+        'Email reset correctly sent.',
+        null,
+        { duration: 6000 }
+      );
+    });
   }
 
   private createForm() {
