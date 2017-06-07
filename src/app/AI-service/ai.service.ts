@@ -38,7 +38,7 @@ export class AIService {
       return 0;
     }
 
-    switch(playerMove) {
+    switch (playerMove) {
       case 'Rock':
         gameResult = this.aiMove === 'Scissors' ? 1 : -1;
         break;
