@@ -5,6 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
 const cssnano = require('cssnano');
+const OfflinePlugin = require('offline-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 const { NoEmitOnErrorsPlugin, EnvironmentPlugin, HashedModuleIdsPlugin } = require('webpack');
 const { GlobCopyWebpackPlugin, BaseHrefWebpackPlugin, SuppressExtractedTextChunksWebpackPlugin } = require('@angular/cli/plugins/webpack');
@@ -53,8 +55,15 @@ const postcssPlugins = function () {
         ].concat(minimizeCss ? [cssnano(minimizeOptions)] : []);
     };
 
-
-
+const METADATA = {
+  title: "Rock Paper Scissors",
+  shortName: "RPS WebApp",
+  baseUrl: "/",
+  description: "Progressive WebApp of the old fashion game.",
+  keywords: "Progressive WebApp,PWA",
+  backgroundColor: "#00bcd4",
+  url: "https://rock-paper-scissors-pwa.firebaseapp.com/",
+};
 
 module.exports = {
   "devtool": false,
@@ -426,6 +435,28 @@ module.exports = {
       "hashDigest": "base64",
       "hashDigestLength": 4
     }),
+    new WebpackPwaManifest({
+      "name": METADATA.title,
+      "short_name": METADATA.shortName,
+      "description": METADATA.description,
+      "background_color": METADATA.backgroundColor,
+      "start_url": "./?utm_source=web_app_manifest",
+      "dir": "rtl",
+      "lang": "en-US",
+      "icons": [
+        {
+          "src": path.join(process.cwd(), "src/assets/scissors.png"),
+          "sizes": [120, 152, 167, 180, 1024],
+          "destination": path.join("icons", "ios")
+        },
+        {
+          "src": path.join(process.cwd(), "src/assets/scissors.png"),
+          "sizes": [32, 36, 48, 72, 96, 144, 192, 512],
+          "destination": path.join("icons", "android")
+        }
+      ]
+    }),
+    new OfflinePlugin(),
     new UglifyJsPlugin({
       "mangle": {
         "screw_ie8": true
