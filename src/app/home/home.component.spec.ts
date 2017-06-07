@@ -56,8 +56,8 @@ describe('HomeComponent', () => {
   });
 
   it('should display an error if the form is not valid', () => {
-    let SnackBar = fixture.debugElement.injector.get(MdSnackBar);
-    let snackBarSpy: jasmine.Spy = spyOn(SnackBar, 'open').and.callThrough();
+    const SnackBar = fixture.debugElement.injector.get(MdSnackBar);
+    const snackBarSpy: jasmine.Spy = spyOn(SnackBar, 'open').and.callThrough();
 
     component.play();
     fixture.detectChanges();
@@ -66,8 +66,8 @@ describe('HomeComponent', () => {
   });
 
   it('play button should generate a new match', () => {
-    let aiService = fixture.debugElement.injector.get(AIService);
-    let aiServiceSpy: jasmine.Spy = spyOn(aiService, 'play').and.callThrough();
+    const aiService = fixture.debugElement.injector.get(AIService);
+    const aiServiceSpy: jasmine.Spy = spyOn(aiService, 'play').and.callThrough();
 
     component.gameForm.controls['chose'].setValue('Rock');
     component.play();
