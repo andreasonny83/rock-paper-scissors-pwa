@@ -4,23 +4,38 @@ import 'rxjs/observable/of';
 
 @Injectable()
 export class AIService {
-  constructor() { }
+  aiMove: IPlayerChose;
+
+  constructor() {
+    this.aiMove = <IPlayerChose>null;
+  }
 
   public play(playerMove: IPlayerChose): Observable<any> {
     return new Observable((observer) => {
       // Create a fake delay for increasing the suspense!
       setTimeout(() => {
-        this.generateReply(playerMove);
+        this.generateRndmReply();
         observer.next('data to send can be objet or anything');
         observer.complete();
       }, 2000);
     });
   }
 
-  private generateReply(playerMove: IPlayerChose) {
-    const aiMove: IPlayerChose[] = ['Rock', 'Paper', 'Scissors'];
-    const chose: number = Math.floor(Math.random() * 3) + 1;
+  public generateRndmReply(): IPlayerChose {
+    const aiOptions: IPlayerChose[] = ['Rock', 'Paper', 'Scissors'];
+    const chose: number = Math.floor(Math.random() * 3);
+    this.aiMove = aiOptions[chose];
+    return aiOptions[chose];
+  }
 
-    return aiMove[chose];
+  public checkVictory(playerMove: IPlayerChose): number  {
+    let gameResult;
+
+    if (playerMove === this.aiMove) {
+      return 0;
+    }
+
+    // more logic will follow
+    return 0;
   }
 }
